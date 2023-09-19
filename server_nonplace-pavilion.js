@@ -5,7 +5,7 @@ var app = express();
 const http = require('http').createServer(app);
 const server = app.listen(2023);
 console.log("listening on port 2023");
-const io = require("socket.io")().listen(server);
+//const io = require("socket.io")().listen(server);
 const { AsyncNedb } = require('nedb-async');
 const nedb = require('nedb');
 
