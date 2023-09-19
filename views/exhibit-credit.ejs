@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <!-- <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'> -->
+    <script type=module src="/socket.io/socket.io.js"></script>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="/OS/folder-icon.ico">
+    <title> nonpalce/Users/Sites </title>
+    <link rel="stylesheet" href="../exhibit-credit.css">
+</head>
+
+<body>
+    <script defer type="text/javascript" src="exhibit-credit.js"></script>
+    <div class="folderFrame" id="pointerpassthru">
+        <div id="headbar" >
+            <div class='threebtns'>
+                <div class='btn' id="close"></div>
+                <div class='btn' id="hide"></div>
+                <div class='btn' id="fullscreen"></div>
+            </div>
+            <div class='headerpath' id="folderpath"> nonplace / Users</div>  <!-- 标点符号rtl -->
+        </div>
+        <div id="previewbar" class="pointeractive">
+            <div id="previewinfo">
+                <img id="previewfoto">
+                <p id="filename"></p>
+                <p id="fileType"> </p>
+                <table id="previewtxt">
+                    <tr>
+                        <td id="informationUITitle">Information</td>
+                    </tr>
+                    <tr>
+                        <td class="infoUIsub">Artist</td>
+                        <td class="infoFilesub" id="artistName">--</td>
+                    </tr>
+                    <tr>
+                        <td class="infoUIsub">Social Handle</td>
+                        <td class="infoFilesub" id="handle">--</td>
+                    </tr>
+                    <tr>
+                        <td class="infoUIsub">Website</td>
+                        <td class="infoFilesub" id="artistLink">--</td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="filemess">
+        <div class="iconBound" draggable="true">
+            <img id="initialIcon" src="OS/bit-icons/PNG.png">
+            <span id="iconTxt"> untitled file </span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
