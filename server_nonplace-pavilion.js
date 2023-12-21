@@ -5,7 +5,6 @@ var app = express();
 const http = require('http').createServer(app);
 const server = app.listen(2023);
 console.log("listening on port 2023");
-//const io = require("socket.io")().listen(server);
 const { AsyncNedb } = require('nedb-async');
 const nedb = require('nedb');
 
@@ -61,8 +60,7 @@ function formatPath(originalPath) {
 
 
 // ------ Landing page for exhibition -----------//
-app.get('', (req, res, next) => { // 'next' means run next request after this; 
-  // console.log(LPeri_imgfiledata.fileIndex); // current original image
+app.get('', (req, res, next) => { 
   res.render("exhibit-landing.ejs", '')
   });
 
@@ -77,17 +75,16 @@ app.get('/Documents/About.txt', (req, res, next) => { // 'next' means run next r
 });
 
 // ------ README page for exhibition -----------//
-app.get('/Documents/README.md', (req, res, next) => { // 'next' means run next request after this; 
+app.get('/Documents/README.md', (req, res, next) => {  
   res.sendFile("/views/exhibit-readme.html", {root: __dirname });
 });
 
 // ------ Statement page for exhibition -----------//
-app.get('/Documents/Statement.pdf', (req, res, next) => { // 'next' means run next request after this; 
+app.get('/Documents/Statement.pdf', (req, res, next) => { 
   // res.sendFile("exhibit-statement.html");
   var stream = fs.createReadStream(__dirname + '/public/ExhibitMedia/nonplace-exhibit-statementPDF.pdf');
   var filename = "statement.pdf"; 
   filename = encodeURIComponent(filename+"#toolbar=0&navpanes=0&scrollbar=0&view=FitH");
-  // Ideally this should strip them
   res.setHeader('Content-disposition', 'inline; filename="' + filename + '"');
   res.setHeader('Content-type', 'application/pdf');
 
@@ -95,7 +92,7 @@ app.get('/Documents/Statement.pdf', (req, res, next) => { // 'next' means run ne
 });
 
 // ------ Credit page for exhibition -----------//
-app.get('/Documents/Credit.zip', (req, res, next) => { // 'next' means run next request after this; 
+app.get('/Documents/Credit.zip', (req, res, next) => { 
   res.render("exhibit-credit.ejs", '');
 });
 app.get('/creditinfo.data', async (req, res, next) => {
