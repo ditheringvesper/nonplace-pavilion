@@ -9,5 +9,6 @@ nonplace.site collective version for online exhibition -> [online here](https://
   - "express": "^4.18.2",
 
 
-
+## originally used nginx proxy, now updated to cdn 
+- Updated https is not yet commited here.
 
